@@ -138,6 +138,25 @@ class Home extends CI_Controller {
 		//$this->load->view('make_order_form',$data);
 	}
 
+	public function send_email($message)
+	{
+			 $to = "publishing@newvision.co.ug";
+	         $subject = "Book order";	         
+	         // $header = "From:capitagerald@gmail.com \r\n";
+	         
+	         $headers = 'From: capitalgerald@gmail.com' . "\r\n" .
+					'Reply-To: capitalgerald@gmail.com' . "\r\n" .
+					'X-Mailer: PHP/' . phpversion();
+
+	         $retval = mail ($to,$subject,$message,$headers);
+	         
+	         if( $retval == true ) {
+	            echo "Message sent successfully...";
+	         }else {
+	            echo "Message could not be sent...";
+	         }
+     }
+
 	public function book_register()
 	{
 
@@ -153,6 +172,7 @@ class Home extends CI_Controller {
 
 		$this->load->model('Home_model'); // autoload model
 		$result=$this->Home_model->book_register($data);
+
 		if($result)
 		{
 			echo  1;	
@@ -161,6 +181,20 @@ class Home extends CI_Controller {
 		{
 			echo  0;	
 		}
+
+/*
+		$name 	= $this->input->post('name');
+		$email	= $this->input->post('email');
+		$phone	= $this->input->post('phone');
+		$latitude	= $this->input->post('latitude');
+		$longitude	= $this->input->post('longitude');
+		$comment	= $this->input->post('comment');
+
+		
+		$message = "Name : "+$name+"<br>Email : "+$email+"<br>Phone : "+$phone+"<br>Comment : "+$comment+"<br>Address : ("+$latitude+", "+$longitude+")";
+		*/
+		$message = "Hi";
+		send_email($message);
 
 	}
 

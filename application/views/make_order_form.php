@@ -33,7 +33,7 @@
       <div class="form-group"> 
         <i class="fa-solid fa-envelope"></i>&nbsp;  
         <label for="email" id="modal_label">Email address: *</label>
-        <input type="text" class="form-control" id="email" name="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required/>
+        <input type="email" class="form-control" id="email" name="email" required/>
       </div>
 
 
@@ -117,8 +117,7 @@
           <button type="button" class="btn btn-warning" id="modal_btn_reset">Reset</button>
           <button type="submit" 
           class="btn btn-success" 
-          id="btn_Order"
-          onclick="ValidateEmail(document.form1.email)">Order Now</button>
+          id="btn_Order">Order Now</button>
         </div>
 
         <h4 style="color:green" id="result"></h4>
