@@ -22,12 +22,12 @@
 		<table class="table table-striped table-bordered">
 			 <thead>
 			 	<th>No</th>
-			 	<th>Name</th>
-			 	<th>Phone</th>
-			 	<th>Email</th>
-			 	<th>Order</th>
-			 	<th>Address</th>
-			 	<th>comment</th>
+			 	<th><i class="fa-solid fa-user"></i>&nbsp; Name</th>
+			 	<th><i class="fa-solid fa-phone"></i>&nbsp; Phone</th>
+			 	<th><i class="fa-solid fa-envelope"></i>&nbsp; Email</th>
+			 	<th><i class="fa-solid fa-cart-shopping"></i>&nbsp; Order</th>
+			 	<th><i class="fa-solid fa-address-book"></i>&nbsp; Address</th>
+			 	<th><i class="fa-solid fa-comment"></i>&nbsp; comment</th>
 			 </thead>
 			<?php
 			$num =1;

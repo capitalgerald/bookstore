@@ -15,6 +15,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+	<!-- Font icon -->
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.2-web/css/all.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.2-web/css/fontawesome.min.css">
+
+	<!-- Map -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
 	</head>
 	<body id="mybody">
 		<div class="container">

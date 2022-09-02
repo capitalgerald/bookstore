@@ -9,6 +9,36 @@
 	#column_book{
 		margin-bottom: 10px;
 	}
+ #btn_details{
+
+ }
+	#btn_buy{
+		text-align: center;
+		background-color: #c80700;
+		color: white;
+		padding: 2px 6px 2px 6px;
+		font-size: 14px;
+		border: none;
+	}
+	#btn_buy:hover{
+		font-style: italic;
+		background-color: #404040;
+		color: white;
+		font-weight: bold;
+		padding: 4px 8px 4px 8px;
+		border-radius: 5px;
+	}
+
+
+	#book_name{
+		font-weight: bold;
+		font-size: 16px;
+	}
+	#book_price{
+		font-weight: bold;
+		font-size: 20px;
+		color: #c80700;
+	}
 </style>
 
 <div class="col-md-12" id="section_title">
@@ -41,13 +71,15 @@
 								src="images/books/<?php echo $row['image']; ?>">
 							</td>
 							<td id="td_text">
-								<?php echo $row['code']; ?><br>
-								<?php echo $row['name']; ?><br>
-								<?php echo $row['author']; ?><br>
-								<?php echo $row['edition']; ?><br>
-								<?php echo $row['level']; ?><br>
-								<?php echo $row['publish_date']; ?><br>
-								<?php echo $row['price']; ?>
+								<div>CODE: <?php echo $row['code']; ?></div>
+								<div><span id="book_name"><?php echo $row['name']; ?></span></div>
+								<div><i class="fa-solid fa-user"></i> By <b><?php echo $row['author']; ?></b></div>
+								<div><i class="fa-solid fa-code-compare"></i> <?php echo $row['edition']; ?> Edition</div>
+								<div><i class="fa-solid fa-user-graduate"></i> <?php echo $row['level']; ?></div>
+								<div><i class="fa-solid fa-calendar-days"></i> <?php echo $row['publish_date']; ?></div>
+								<div><span id="book_price"><?php echo $row['price']; ?></span>UGX</div>
+								<button id="btn_buy">Buy Now</button>
+								<button id="btn_details">Details</button>
 							</td>
 						</tr>
 					</table>
