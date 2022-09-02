@@ -22,4 +22,8 @@ $(document).ready(function(){
 	var file_make_order = "make_order.php";
 	switch_menu(btn_make_order, div_section, file_make_order);
 
+	var btn_buy = "#btn_buy";
+	var file_buy = "make_order.php";
+	switch_menu(btn_buy, div_section, file_buy);
+
  });

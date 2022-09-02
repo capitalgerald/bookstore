@@ -12,7 +12,7 @@
  #btn_details{
 
  }
-	#btn_buy{
+	#btn_buy_book{
 		text-align: center;
 		background-color: #c80700;
 		color: white;
@@ -20,7 +20,7 @@
 		font-size: 14px;
 		border: none;
 	}
-	#btn_buy:hover{
+	#btn_buy_book:hover{
 		font-style: italic;
 		background-color: #404040;
 		color: white;
@@ -49,9 +49,7 @@
 <div class="row">
 	
 		<?php 
-		include 'database.php'; // include ('database.php'); 
-
-		// $data = $_POST['data']; // Recieve data from the previous page
+		include 'database.php';
 
 		$sql = "SELECT * FROM books";
 		$result = mysqli_query($conn, $sql);
@@ -75,11 +73,31 @@
 								<div><span id="book_name"><?php echo $row['name']; ?></span></div>
 								<div><i class="fa-solid fa-user"></i> By <b><?php echo $row['author']; ?></b></div>
 								<div><i class="fa-solid fa-code-compare"></i> <?php echo $row['edition']; ?> Edition</div>
-								<div><i class="fa-solid fa-user-graduate"></i> <?php echo $row['level']; ?></div>
-								<div><i class="fa-solid fa-calendar-days"></i> <?php echo $row['publish_date']; ?></div>
-								<div><span id="book_price"><?php echo $row['price']; ?></span>UGX</div>
-								<button id="btn_buy">Buy Now</button>
-								<button id="btn_details">Details</button>
+								<div>
+										<i class="fa-solid fa-user-graduate"></i> 
+										<?php echo $row['level']; ?>
+								</div>
+								<div>
+										<i class="fa-solid fa-calendar-days"></i> 
+										<?php echo $row['publish_date']; ?>
+								</div>
+								<div>
+									<span id="book_price"><?php echo $row['price']; ?></span>UGX
+								</div>
+
+								<button 
+											id="btn_buy_book"
+											onclick="make_order(this, 'red', '<?php echo $row['code']; ?>' )">
+											<i class="fa-solid fa-cart-shopping"></i>&nbsp; 
+									Buy Now
+								</button>
+
+								<button 
+											id="btn_book_details"
+											onclick="book_details(this, 'red', '<?php echo $row['code']; ?>' )">
+									Details
+								</button>
+
 							</td>
 						</tr>
 					</table>
@@ -91,3 +109,48 @@
 		}
 		?>
 </div><!-- End row -->
+
+<script type="text/javascript">
+
+// Pick Book Details
+function book_details(element, color, book_code) {
+  	// element.style.color = color;
+  	// alert(book_code);
+		$("#content_div").load(
+ 			"book_details.php", 
+ 			{book_code : book_code}
+ 		);
+
+}
+
+// Switch Menu
+function switch_menu(btn, div, file)
+{
+	$(btn).click(function(){
+ 		$(div).load(file);
+ 	});
+}
+
+/*
+$(document).ready(function(){
+	var div_section = "#content_div";
+
+	// Buy Book
+	var btn_buy_book = "#btn_buy_book";
+	var file_buy_book = "make_order.php";
+	switch_menu(btn_buy_book, div_section, file_buy_book);
+
+ });
+ */
+
+ 	function make_order(element, color, book_code) 
+	{
+	  	// element.style.color = color;
+	  	// alert(book_code);
+
+			$("#content_div").load(
+	 			"make_order.php", 
+	 			{book_code : book_code}
+	 		);
+	}
+</script>
