@@ -21,9 +21,9 @@
 
 			<!-- Menu -->
 			<div id="div_menu">
-				<button id="btn_books" class="btn btn-success btn_menu">Books</button>
-				<button id="btn_orders" class="btn btn-success btn_menu">Orders</button>		
-				<button id="btn_make_order" class="btn btn-success btn_menu">Make Order</button>
+				<button id="btn_books" class="btn_menu">Books</button>
+				<button id="btn_orders" class="btn_menu">Orders</button>		
+				<button id="btn_make_order" class="btn_menu">Make Order</button>
 			</div>
 
 			<div id="content_div">

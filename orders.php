@@ -1,13 +1,15 @@
+<?php 
+	include 'database.php';
+?>
+
 <div class="col-md-12" id="section_title">
   <h1>Orders Placed</h1>
   <p>These are the placed orders</p>
 </div>
 
 
-<div style="overflow-x:auto;">
+<div>
 	<?php 
-	include 'database.php'; // include ('database.php'); 
-
 	// $data = $_POST['data']; // Recieve data from the previous page
 
 	$sql = "SELECT * FROM orders";
