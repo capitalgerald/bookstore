@@ -1,0 +1,19 @@
+Color
+
+Gray Dark = #404040
+Gray - Light = #ededed
+Red = #c80700
+Wohite = #ffffff
+Black = #0a0a0a
+
+
+MENU
+Normal : background-color: #c80700;
+Normal : color: #f2f2f2;
+
+Active : background-color: #404040;
+Active : color: white;
+
+Hover : background-color: #ddd;
+Hover : color: black;
+

@@ -1,0 +1,29 @@
+	#mybody{
+		background-color: #ededed;
+		padding: 5px;
+	}
+	#div_menu{
+		text-align: center;
+		background-color: #404040;
+		padding: 10px;
+	}
+
+	.btn_menu{
+		text-align: center;
+		background-color: #c80700;
+		color: white;
+	}
+	#section_title{
+      text-align: center;
+      border-bottom: 3px solid #c80700;
+      color: white;
+      background-color: #404040;
+      margin-bottom: 10px;
+
+    }
+
+	#image_book{
+		max-width: 200px;
+		border-radius: 5px;
+	}
+	
