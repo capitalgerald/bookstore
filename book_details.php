@@ -4,20 +4,31 @@
 		color: #c80700;
 	}
 
-	#btn_book_details:hover{
+	#btn_Comment{
+		padding: 6px;
+		font-weight: bold;
 		background-color: red;
 		color: white;
 		border: none;
-		padding: 6px;
-		font-weight: bold;
 	}
 
-#btn_buy_book:hover{
-		background-color: red;
-		color: white;
-		border: none;
-		padding: 6px;
+#btn_Comment:hover{
+		background-color: #404040;
+		color: white;		
+		border-bottom: 4px solid red;
+	}
+
+#btn_buy_book{
+	padding: 6px;
 		font-weight: bold;
+		background-color: #404040;
+		color: white;	
+		border: none;	
+	}
+	#btn_buy_book:hover{
+		background-color: red;
+		color: white;	
+		border-bottom: 4px solid #404040;	
 	}
 </style>
 
@@ -62,7 +73,7 @@ include 'database.php';
 </div>
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-6 col-sm-12">
 				<img width="100%" 
 								id="image_book" 
 								src="images/books/<?php echo $image; ?>">
@@ -122,7 +133,7 @@ include 'database.php';
 								</button>
 
 							<button 
-											id="btn_book_details"
+											id="btn_Comment"
 											onclick="book_details(this, 'red', '<?php echo $book_code; ?>' )">
 											<i class="fa-solid fa-comment"></i>&nbsp; 
 									Comment

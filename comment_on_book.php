@@ -7,8 +7,9 @@ include 'database.php';
 	if(isset($_POST['book_code'])){ // if an event is set
 		$book_code = $_POST['book_code']; // Pick the data
 		if (!empty($book_code)) {
-			// echo $book_code;
+			echo $book_code;
 		}
 	}
 
 ?>
+<h1>Hi, comment on the this book</h1>

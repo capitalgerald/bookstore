@@ -95,6 +95,7 @@
 								<button 
 											id="btn_book_details"
 											onclick="book_details(this, 'red', '<?php echo $row['code']; ?>' )">
+											<i class="fa-solid fa-circle-info"></i>&nbsp; 
 									Details
 								</button>
 

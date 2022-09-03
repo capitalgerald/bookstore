@@ -5,7 +5,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Book Store - Vision Group</title>
+		<title>Book Store</title>
+		<link rel="icon" type="image/x-icon" href="images/favicon.png">
 
 		<link rel="stylesheet" type="text/css" href="customCSS.css">
 		<script type="text/javascript" src="jquery-v3.6.0.min.js"></script>
@@ -19,8 +20,6 @@
 	<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.2-web/css/all.css">
 	<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.2-web/css/fontawesome.min.css">
 
-	<!-- Map -->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 	</head>
 	<body id="mybody">

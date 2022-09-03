@@ -11,8 +11,8 @@
 <div>
 	<?php 
 	// $data = $_POST['data']; // Recieve data from the previous page
-
-	$sql = "SELECT * FROM orders";
+	/* SELECT * FROM `orders` ORDER BY `orders`.`id` DESC */
+	$sql = "SELECT * FROM orders ORDER BY orders.id DESC";
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) 
@@ -23,8 +23,10 @@
 			 <thead>
 			 	<th>No</th>
 			 	<th><i class="fa-solid fa-user"></i>&nbsp; Name</th>
+			 	<!--
 			 	<th><i class="fa-solid fa-phone"></i>&nbsp; Phone</th>
 			 	<th><i class="fa-solid fa-envelope"></i>&nbsp; Email</th>
+			 -->
 			 	<th><i class="fa-solid fa-cart-shopping"></i>&nbsp; Order</th>
 			 	<th><i class="fa-solid fa-address-book"></i>&nbsp; Address</th>
 			 	<th><i class="fa-solid fa-comment"></i>&nbsp; comment</th>
@@ -36,11 +38,21 @@
 				?>
 					<tr>
 						<td><?php echo $num; ?></td>
-						<td><?php echo $row['name']; ?></td>
-						<td><?php echo $row['phone']; ?></td>
-						<td><?php echo $row['email']; ?></td>
+						<td>
+							<?php echo $row['name']; ?><br>
+							<?php echo $row['email']; ?>	<br>
+							<?php echo $row['phone']; ?>
+														
+						</td>
 						<td><?php echo $row['order']; ?></td>
-						<td><?php echo $row['latitude']; ?><br><?php echo $row['longitude']; ?> ]</td>
+						<td>
+							Country : <?php echo $row['country']; ?><br>
+							District : <?php echo $row['district']; ?><br>
+							County : <?php echo $row['county']; ?><br>
+							Subcounty : <?php echo $row['subcounty']; ?><br>
+							Parish : <?php echo $row['parish']; ?><br>
+							Village : <?php echo $row['village']; ?>
+						</td>
 						<td><?php echo $row['comment']; ?></td>
 					</tr>			
 				<?php
@@ -55,3 +67,6 @@
 	}
 	?>
 </div>
+
+<br><br><br>
+
