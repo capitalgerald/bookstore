@@ -358,7 +358,7 @@ include 'database.php';
           // const points = new Array(40, 100, 1, 5, 25, 10); // Avoid this
           // const order = ["40", 100, 1, 5, 25, 10];
 
-          $("#content_div").load("make_order_send_email.php",); // Send Email
+          $("#content_div").load("make_order_send_email.php"); // Send Email
 
           // Send data to the database
             $.post("order_insert.php", 
@@ -380,8 +380,7 @@ include 'database.php';
               // $("#test").html(data); 
               //alert(status); 
               alert("Thank you, Order recieved. Email sent successfully");
-              $("#content_div").load("orders.php",);
-              // $("#content_div").load("orders.php");              
+              $("#content_div").load("orders.php");              
             }); 
             
         });
