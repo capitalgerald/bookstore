@@ -15,12 +15,13 @@
         $village    = $_POST['village'];
 
         $comment    = $_POST['comment'];
-
+        $ordered_books = $_POST['ordered_books'];
+        
         if (!empty($name)) 
         {
             include 'database.php';
 
-             $sql = "INSERT INTO orders (name, email, phone, country, district, county, subcounty, parish, village, comment) VALUES ('$name', '$email', '$phone', '$country', '$district', '$county', '$subcounty', '$parish', '$village', '$comment')";
+             $sql = "INSERT INTO orders (name, email, phone, country, district, county, subcounty, parish, village, comment, ordered_books) VALUES ('$name', '$email', '$phone', '$country', '$district', '$county', '$subcounty', '$parish', '$village', '$comment', '$ordered_books')";
 
             if (mysqli_query($conn, $sql)) {
               echo "New record created successfully";
@@ -31,32 +32,3 @@
         }
     }
 ?>
-
-
-
-
-
-<?php
-
-/*
-    // METHOD 1
-    if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }            
-    $conn->close();
-    */
-
-    /*
-    // METHOD 2
-    if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
-    } else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-    mysqli_close($conn);
-
-*/
-?>
-

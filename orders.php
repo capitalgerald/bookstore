@@ -40,18 +40,18 @@
 						<td><?php echo $num; ?></td>
 						<td>
 							<?php echo $row['name']; ?><br>
-							<?php echo $row['email']; ?>	<br>
+							<?php echo $row['email']; ?><br>
 							<?php echo $row['phone']; ?>
 														
 						</td>
-						<td><?php echo $row['order']; ?></td>
+						<td><?php echo $row['ordered_books']; ?></td>
 						<td>
-							Country : <?php echo $row['country']; ?><br>
-							District : <?php echo $row['district']; ?><br>
-							County : <?php echo $row['county']; ?><br>
+							Country 	: <?php echo $row['country']; ?><br>
+							District 	: <?php echo $row['district']; ?><br>
+							County 		: <?php echo $row['county']; ?><br>
 							Subcounty : <?php echo $row['subcounty']; ?><br>
-							Parish : <?php echo $row['parish']; ?><br>
-							Village : <?php echo $row['village']; ?>
+							Parish 		: <?php echo $row['parish']; ?><br>
+							Village 	: <?php echo $row['village']; ?>
 						</td>
 						<td><?php echo $row['comment']; ?></td>
 					</tr>			

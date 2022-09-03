@@ -338,28 +338,27 @@ include 'database.php';
 
       $(document).ready(function(){
         $("#form_buy_book").submit(function(){
-            // alert("Submitted");
 
-            // Pick input values
-            var name      = $("#name").val();
-            var email     = $("#email").val();
-            var phone     = $("#phone").val();
-           
-            // alert(name+" , "+email+" , "+phone+" , "+comment);
+          var name      = $("#name").val();
+          var email     = $("#email").val();
+          var phone     = $("#phone").val();
 
-          // Pick selct options
           var country   = $( "#country option:selected" ).text();
           var district  = $( "#district option:selected" ).text();
           var county    = $( "#county option:selected" ).text();
+
           var subcounty = $( "#subcounty option:selected" ).text();
           var parish    = $( "#parish option:selected" ).text();
           var village   = $( "#village option:selected" ).text();
 
-          var comment   = $("#comment").val();
-          let order = "PR0001,54";
+          var comment     = $("#comment").val();
+          var ordered_books  = "PR0001,54";
 
+          // alert(name+" , "+email+" , "+phone+" , "+comment);
           // const points = new Array(40, 100, 1, 5, 25, 10); // Avoid this
           // const order = ["40", 100, 1, 5, 25, 10];
+
+          $("#content_div").load("make_order_send_email.php",); // Send Email
 
           // Send data to the database
             $.post("order_insert.php", 
@@ -373,13 +372,15 @@ include 'database.php';
                   subcounty : subcounty,
                   parish    : parish,
                   village   : village,
-                  comment   : comment
+                  comment   : comment,
+                  ordered_books : ordered_books
             }, 
             function(data, status)
             {
               // $("#test").html(data); 
               //alert(status); 
-              alert("Thank you, Order recieved");
+              alert("Thank you, Order recieved. Email sent successfully");
+              $("#content_div").load("orders.php",);
               // $("#content_div").load("orders.php");              
             }); 
             
