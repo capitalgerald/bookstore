@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2022 at 06:48 AM
+-- Generation Time: Sep 03, 2022 at 11:59 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -61,7 +61,7 @@ CREATE TABLE `orders` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `phone` varchar(100) NOT NULL,
-  `order` varchar(200) NOT NULL,
+  `ordered_books` text NOT NULL,
   `country` varchar(200) NOT NULL,
   `district` varchar(200) NOT NULL,
   `county` varchar(200) NOT NULL,
@@ -75,13 +75,12 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `date`, `name`, `email`, `phone`, `order`, `country`, `district`, `county`, `subcounty`, `parish`, `village`, `comment`) VALUES
+INSERT INTO `orders` (`id`, `date`, `name`, `email`, `phone`, `ordered_books`, `country`, `district`, `county`, `subcounty`, `parish`, `village`, `comment`) VALUES
 (5, '', 'Kibirango Gerald', 'capitalgerald', '0708003786', '[[\"PR0001\", 3],[\"OR984\",6]]', 'Uganda', 'Luwero', 'Katikamu South', 'Makulubita', 'Mawale', 'Kawumu', 'Do you have a brach in Semuto?'),
 (6, '', 'Simon', 'simon@gmail.com', '0785645324', '[[PR0002, 4], [PR0003, 1]]', 'Uganda', 'Arua', 'xxx', 'xxx', 'xxx', 'xxx', 'Can you lower me the price'),
 (7, '', 'Aisha Namiilo', 'aisha@gmail.com', '0784746773', '[OR0001, 13]', 'Uganda', 'Masaka', 'xxxx', 'xxx', 'xxx', 'xxx', 'Can you deliver to Masaka'),
-(28, '', 'Nakimera', 'Nakimera@gmail.com', '0789675432', '', 'Uganda', 'Luwero', 'Katikamu South', 'Makulubita', 'Mawale', 'Kawumu', 'Your books are good'),
-(29, '', 'Masembe Stepehn', 'Masembe.stepehn@gmail.com', '078355322', '', 'Uganda', 'Luwero', 'Katikamu South', 'Makulubita', 'Mawale', 'Kawumu', 'Do you sell in bulk?'),
-(30, '', 'Sekandi', 'Sekandipaul66@gmail.com', '0783553876', '', 'Uganda', 'Luwero', 'Katikamu South', 'Makulubita', 'Mawale', 'Kawumu', 'I also need passed papers');
+(31, '', 'Prosper', 'prosper@gmail.com', '0782098745', 'PR0001,54', 'Uganda', 'Luwero', 'Katikamu South', 'Makulubita', 'Mawale', 'Kawumu', 'I want tutors from your team.'),
+(32, '', 'aaa', 'aaa@gmail.com', '3939393', 'PR0001,54', 'Uganda', 'Luwero', 'Katikamu South', 'Makulubita', 'Mawale', 'Kawumu', 'cccc');
 
 --
 -- Indexes for dumped tables
@@ -114,7 +113,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
