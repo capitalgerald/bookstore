@@ -380,6 +380,7 @@ include 'database.php';
               // $("#test").html(data); 
               //alert(status); 
               alert("Thank you, Order recieved");
+              // $("#content_div").load("orders.php");              
             }); 
             
         });

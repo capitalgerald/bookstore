@@ -1,14 +1,4 @@
 <?php
-
-// Online
-/*
-$servername = "localhost";
-$username = "kibirangogerald_capital";
-$password = "w;wdAbM,Whu+";
-$dbname = "kibirangogerald_bookstore";
-*/
-
-// Offline
 $servername = "localhost";
 $username = "root";
 $password = "";
