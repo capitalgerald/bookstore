@@ -14,14 +14,14 @@
         $parish     = $_POST['parish'];
         $village    = $_POST['village'];
 
-        $comment    = $_POST['comment'];
+        $mycomment    = $_POST['mycomment'];
         $ordered_books = $_POST['ordered_books'];
         
         if (!empty($name)) 
         {
             include 'database.php';
 
-             $sql = "INSERT INTO orders (name, email, phone, country, district, county, subcounty, parish, village, comment, ordered_books) VALUES ('$name', '$email', '$phone', '$country', '$district', '$county', '$subcounty', '$parish', '$village', '$comment', '$ordered_books')";
+             $sql = "INSERT INTO orders (name, email, phone, country, district, county, subcounty, parish, village, comment, ordered_books) VALUES ('$name', '$email', '$phone', '$country', '$district', '$county', '$subcounty', '$parish', '$village', '$mycomment', '$ordered_books')";
 
             if (mysqli_query($conn, $sql)) {
               echo "New record created successfully";

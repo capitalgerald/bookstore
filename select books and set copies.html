@@ -1,0 +1,297 @@
+<!--
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Enable / Disable Text field - Using javascript - inline function</h1>
+Enter First name: <input type="text" id="name">
+<button onclick="disable()">Disable the text field</button> 
+<button onclick="enable()">Enable the text field</button> 
+<script type="text/javascript">
+    function disable() { document.getElementById("name").disabled = true; } 
+    function enable() { document.getElementById("name").disabled = false; } 
+</script>
+
+</body>
+</html>
+
+-->
+
+
+
+<!--
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Enable / Disable Text field - Using javascript - addEventListener - getElementById()</h1>
+First name: <input type="text" id="fname">
+<button id="btn_dis">Disable the text field</button> 
+<button id="btn_ena">Enable the text field</button> 
+<script type="text/javascript">
+    var btn_dis = document.getElementById('btn_dis');
+    btn_dis.addEventListener("click", function() {
+        document.getElementById("fname").disabled = true;
+    }, true);
+    
+    var btn_ena = document.getElementById('btn_ena');
+    btn_ena.addEventListener("click", function() {
+        document.getElementById("fname").disabled = false;
+    }, true);
+</script>
+</body>
+</html>
+-->
+
+
+
+
+
+
+<!--
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Enable / Disable Text field - Using javascript - addEventListener - getElementsByName()</h1>
+First name: <input type="text" name="name"><br>
+Middle name: <input type="text" name="name"><br>
+Last name: <input type="text" name="name"><br>
+<span id="count"></span><br>
+
+<button id="btn_disable">Disable the text field</button> 
+<button id="btn_enable">Enable the text field</button> 
+
+<script type="text/javascript">
+    //  element.getElementsByTagName("p")[1].style.fontSize = "24px";
+    // Array. Note: getElementsByName return a collection of NodeList
+    let array = document.getElementsByName("name");
+    let array_length = document.getElementsByName("name").length;
+
+    document.getElementById("count").innerHTML = array_length+" in Stock.";
+
+    // click the button to disable Textfields
+    var btn_disable = document.getElementById('btn_disable');
+    btn_disable.addEventListener("click", function() {
+            // Loop through tag elements and disable all them one by one
+            let collection = document.getElementsByName("name");
+            for (let i = 0; i < collection.length; i++) { 
+                collection[i].disabled = true;
+                collection[i].style.fontSize = "24px";
+                collection[i].style.backgroundColor = "red";
+            }        
+    }, true);
+    
+
+    var btn_enable = document.getElementById('btn_enable');
+    btn_enable.addEventListener("click", function() {
+            // Loop through tag elements and disable all of them one by one
+            let collection = document.getElementsByName("name");
+            for (let i = 0; i < collection.length; i++) { 
+                collection[i].disabled = false;
+                collection[i].style.fontSize = "16px";
+
+                collection[i].style.backgroundColor = "green";
+                .style.borderColor = "red";
+                
+            }
+    }, true);
+</script>
+
+</body>
+</html>
+-->
+
+
+
+
+
+
+<!---
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+<body>
+
+Input 1 <input type="" id="input1" class="copies" size="4" maxlength="4"><span id="copies1"></span><br>
+Input 2 <input type="" id="input2" class="copies" size="4" maxlength="4"><span id="copies2"></span><br>
+Input 3 <input type="" id="input3" class="copies" size="4" maxlength="4"><span id="copies3"></span><br>
+Input 4 <input type="" id="input4" class="copies" size="4" maxlength="4"><span id="copies4"></span><br>
+
+<button id="rest_copies">Edit Copies</button>
+
+    <script type="text/javascript">
+        // console.log('You have left input1');
+        // document.getElementById("myText").disabled = true;
+        // var x = document.getElementById("myText").value;
+        // var div =  document.getElementById("mydiv").innerHTML = "Hello Gerlad";
+        // const collection = document.getElementsByClassName("example color");
+        // element.addEventListener("click", function(){ alert("Hello World!"); });
+        // buttonObject.disabled = true|false
+        // document.getElementById("myBtn").disabled = true;
+
+        var input1 = document.getElementById('input1');
+        input1.addEventListener("blur", function( event ) {
+            input1.disabled = true;
+
+            var value1 = input1.value;
+            document.getElementById("copies1").innerHTML = value1;
+
+            console.log('You have left input1');
+        }, true);
+
+        var input2 = document.getElementById('input2');
+        input2.addEventListener("blur", function( event ) {
+            input2.disabled = true;
+
+            var value2 = input2.value;
+            document.getElementById("copies2").innerHTML = value2;
+
+            console.log('You have left input2');
+        }, true);
+
+
+        var input3 = document.getElementById('input3');
+        input3.addEventListener("blur", function( event ) {
+            input3.disabled = true;
+
+            var value3 = input3.value;
+            document.getElementById("copies3").innerHTML = value3;
+
+            console.log('You have left input3');
+        }, true);
+
+
+        var input4 = document.getElementById('input4');
+        input4.addEventListener("blur", function( event ) {
+            input4.disabled = true;
+
+            var value4 = input4.value;
+            document.getElementById("copies4").innerHTML = value4;
+
+            console.log('You have left input4');
+        }, true);
+    </script>
+
+</body>
+</html>
+-->
+
+
+
+
+<!--
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+<body>
+
+Input 1 <input type="" id="100" value="100" onclick="myFunction(this, '100')">
+<span id="100_x"></span><br>
+
+Input 2 <input type="" id="200" value="200" onclick="myFunction(this, '200')">
+<span id="200_x"></span><br>
+
+Input 3 <input type="" id="300" value="300" onclick="myFunction(this, '300')">
+<span id="300_x"></span><br>
+
+Input 4 <input type="" id="400" value="400" onclick="myFunction(this, '400')">
+<span id="400_x"></span><br>
+
+<h1 id="all_copies"></h1>
+
+    <script type="text/javascript">
+
+        const copies = []; // initialize an array
+
+        function myFunction(myelement, mycode){
+            myelement.style.backgroundColor = "green";
+             myelement.style.color = "white";
+
+            var myvalue = document.getElementById(mycode).value; // alert(myvalue); 
+            document.getElementById(mycode).disabled = true;
+            document.getElementById(mycode+"_x").innerHTML = myvalue;
+
+            if(myvalue != ""){
+                copies.push(myvalue); // Add element to an Array
+                document.getElementById("all_copies").innerHTML = copies.toString();
+            }
+        }
+    </script>
+
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+<body>
+
+Input 1 
+<input type="" id="100" onblur="myFunction(this,'100')">
+<span id="100_x"></span><br>
+
+Input 2 
+<input type="" id="200" onblur="myFunction(this, '200')">
+<span id="200_x"></span><br>
+
+Input 3 
+<input type="" id="300" onblur="myFunction(this, '300')">
+<span id="300_x"></span><br>
+
+Input 4 
+<input type="" id="400" onblur="myFunction(this, '400')">
+<span id="400_x"></span><br>
+
+<h1 id="all_copies"></h1>
+
+    <script type="text/javascript">
+        const copies = []; // initialize an array
+
+        function myFunction(myelement, mycode){
+
+            var myvalue = document.getElementById(mycode).value; // alert(myvalue); 
+            document.getElementById(mycode).disabled = true;
+            document.getElementById(mycode+"_x").innerHTML = myvalue;
+
+            // Don't capture empty values
+            if(myvalue != ""){
+                copies.push(myvalue); // Add element to an Array
+                document.getElementById("all_copies").innerHTML = copies.toString();
+                myelement.style.backgroundColor = "green";
+                myelement.style.color = "white";
+            } else {
+                myelement.style.backgroundColor = "red";
+                myelement.style.color = "white";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+    /*
+    var input1 = document.getElementById('input1');
+    input1.addEventListener("blur", function( event ) {
+        input1.disabled = true;
+
+        var value1 = input1.value;
+        document.getElementById("copies1").innerHTML = value1;
+
+        console.log('You have left input1');
+    }, true);
+    */
+-->

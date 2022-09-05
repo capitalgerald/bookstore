@@ -1,21 +1,4 @@
 <?php
-/*
-$name       = "Kibirango Gerald";
-$email      = "capitalgerald@gmail.com";
-$phone      = "0703003783";
-
-$country    = "Uganda";
-$district   = "Luwero";
-$county     = "Katikamu South";
-
-$subcounty  = "Makulubita";
-$parish     = "Mawale";
-$village    = "Kawumu";
-
-$comment    = "I love your books. They are so organised";
-$order_book = "[PR0123, 3]";
-*/
-
     $name       = $_POST['name'];
     $email      = $_POST['email'];
     $phone      = $_POST['phone'];
@@ -29,14 +12,14 @@ $order_book = "[PR0123, 3]";
     $village    = $_POST['village'];
 
     $comment    = $_POST['comment'];
-    $order_book = $_POST['order_book'];
+    $ordered_books = $_POST['ordered_books'];
 
 
 $message = "Name : ".$name.
 "\r\n"."<br> Email : ".$email.
 "\r\n"."<br> Phone : ".$phone.
 "\r\n"."<br> Comment : ".$comment.
-"\r\n"."<br> Order : ".$order_book.
+"\r\n"."<br> ordered books : ".$ordered_books.
 "\r\n"."<br> Country : ".$country.
 "\r\n"."<br> District : ".$district.
 "\r\n"."<br> County : ".$county.
