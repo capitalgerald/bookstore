@@ -68,8 +68,8 @@ include 'database.php';
 ?>
 
 <div class="col-md-12" id="section_title">
-  <h1>Orders Placed</h1>
-  <p>These are the placed orders</p>
+  <h1>Book Details</h1>
+  <p><?php echo $name; ?></p>
 </div>
 
 <div class="row">
@@ -153,7 +153,7 @@ include 'database.php';
 	  	// alert(book_code);
 
 			$("#content_div").load(
-	 			"comment_on_book.php", 
+	 			"views/book_comment.php", 
 	 			{book_code : book_code}
 	 		);
 	}
@@ -164,7 +164,7 @@ include 'database.php';
 	  	// alert(book_code);
 
 			$("#content_div").load(
-	 			"make_order.php", 
+	 			"views/order_make.php", 
 	 			{book_code : book_code}
 	 		);
 	}

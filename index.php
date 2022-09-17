@@ -1,42 +1,41 @@
-<?php	include ('database.php'); ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Book Store</title>
+		<title>Book Store - By Kibirango Gerald</title>
 		<link rel="icon" type="image/x-icon" href="images/favicon.png">
 
-		<link rel="stylesheet" type="text/css" href="customCSS.css">
-		<script type="text/javascript" src="jquery-v3.6.0.min.js"></script>
-		<script type="text/javascript" src="customJS.js"></script>
+		<!-- connect jquery -->
+		<script type="text/javascript" src="libraries/jquery/jquery-3.6.0.min.js"></script>	
+		<script type="text/javascript" src="libraries/custom.js"></script>
+		<script type="text/javascript" src="libraries/custom_form.js"></script>
+		<link rel="stylesheet" type="text/css" href="libraries/custom.css">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="libraries/bootstrap/bootstrap-3.4.1.min.css">
+		<script  type="text/javascript" src="libraries/bootstrap/bootstrap-3.4.1.min.js"></script>
 
-	<!-- Font icon -->
-	<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.2-web/css/all.css">
-	<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.2-web/css/fontawesome.min.css">
-
+		<!-- Font icon -->
+		<link rel="stylesheet" type="text/css" href="libraries/fontawesome-free-6.1.2-web/css/all.css">
+		<link rel="stylesheet" type="text/css" href="libraries/fontawesome-free-6.1.2-web/css/fontawesome.min.css">
 
 	</head>
 	<body id="mybody">
-		<div class="container">
 
-			<!-- Menu -->
-			<div id="div_menu">
-				<button id="btn_books" class="btn_menu">Books</button>
-				<button id="btn_orders" class="btn_menu">Orders</button>		
-				<button id="btn_make_order" class="btn_menu">Make Order</button>
-			</div>
-
-			<div id="content_div">
-				<?php	include ('books.php'); ?>
-			</div>
-
+		<!-- Menu -->
+		<div id="div_menu">
+			<button id="btn_book_list" class="btn_menu">Books</button>
+			<button id="btn_order_list" class="btn_menu">View Orders</button>		
+			<button id="btn_order_make" class="btn_menu">Make Order</button>
 		</div>
+
+		<div id="content_div">
+			<?php
+			 include ('views/order_list.php'); 
+			?>
+		</div>
+
+		<script type="text/javascript" src="libraries/custom.js"></script>
 	</body>
 </html>
-

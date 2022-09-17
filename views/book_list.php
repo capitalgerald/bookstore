@@ -1,3 +1,7 @@
+<?php 
+	include 'database.php';
+?>
+
 <style type="text/css">
 	#td_image{
 
@@ -49,7 +53,6 @@
 <div class="row">
 	
 		<?php 
-		include 'database.php';
 
 		$sql = "SELECT * FROM books";
 		$result = mysqli_query($conn, $sql);
@@ -86,16 +89,16 @@
 								</div>
 
 								<button 
-											id="btn_buy_book"
-											onclick="make_order(this, 'red', '<?php echo $row['code']; ?>' )">
-											<i class="fa-solid fa-cart-shopping"></i>&nbsp; 
+									id="btn_buy_book"
+									onclick="make_order(this, 'red', '<?php echo $row['code']; ?>' )">
+									<i class="fa-solid fa-cart-shopping"></i>&nbsp; 
 									Buy Now
 								</button>
 
 								<button 
-											id="btn_book_details"
-											onclick="book_details(this, 'red', '<?php echo $row['code']; ?>' )">
-											<i class="fa-solid fa-circle-info"></i>&nbsp; 
+									id="btn_book_details"
+									onclick="book_details(this, 'red', '<?php echo $row['code']; ?>' )">
+									<i class="fa-solid fa-circle-info"></i>&nbsp; 
 									Details
 								</button>
 
@@ -111,47 +114,37 @@
 		?>
 </div><!-- End row -->
 
+
+
+
 <script type="text/javascript">
 
-// Pick Book Details
-function book_details(element, color, book_code) {
-  	// element.style.color = color;
-  	// alert(book_code);
+	// Switch Menu
+	function switch_menu(btn, div, file)
+	{
+		$(btn).click(function(){
+	 		$(div).load(file);
+	 	});
+	}
+
+	// Pick Book Details
+	function book_details(element, color, book_code)
+	{
+	  	// element.style.color = color;
+	  	// alert(book_code);
 		$("#content_div").load(
- 			"book_details.php", 
+ 			"views/book_details.php", 
  			{book_code : book_code}
  		);
-
-}
-
-// Switch Menu
-function switch_menu(btn, div, file)
-{
-	$(btn).click(function(){
- 		$(div).load(file);
- 	});
-}
-
-/*
-$(document).ready(function(){
-	var div_section = "#content_div";
-
-	// Buy Book
-	var btn_buy_book = "#btn_buy_book";
-	var file_buy_book = "make_order.php";
-	switch_menu(btn_buy_book, div_section, file_buy_book);
-
- });
- */
+	}
 
  	function make_order(element, color, book_code) 
 	{
 	  	// element.style.color = color;
-	  	// alert(book_code);
-
-			$("#content_div").load(
-	 			"make_order.php", 
-	 			{book_code : book_code}
-	 		);
+	  	// alert(book_code);	  		
+		$("#content_div").load(
+ 			"views/order_make.php", 
+ 			{book_code : book_code}
+ 		);	 		
 	}
 </script>
